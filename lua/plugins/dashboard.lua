@@ -1,11 +1,9 @@
-return-- lazy.nvim
-{
+return {
   "folke/snacks.nvim",
-  ---@type snacks.Config
   opts = {
     dashboard = {
-        preset = {
-            header = [[
+      preset = {
+        header = [[
 ⠀⠀⠀⠀⠀⠀⠀⣠⡤⠶⡄⠀⠀⠀⠀⠀⠀⠀⢠⠶⣦⣀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⢀⣴⣿⡟⠀⠈⣀⣾⣝⣯⣿⣛⣷⣦⡀⠀⠈⢿⣿⣦⡀⠀⠀⠀⠀
 ⠀⠀⠀⣴⣿⣿⣿⡇⠀⢼⣿⣽⣿⢻⣿⣻⣿⣟⣷⡄⠀⢸⣿⣿⣾⣄⠀⠀⠀
@@ -20,9 +18,13 @@ return-- lazy.nvim
 ⠀⠀⠀⠸⡀⠀⢠⡎⣝⠉⢰⠾⠿⢯⡘⢧⡧⠄⠀⡄⢻⠀⠀⠀⢰⠁⠀⠀⠀
 ⠀⠀⠀⠀⠁⠀⠈⢧⣈⠀⠘⢦⠀⣀⠇⣼⠃⠰⣄⣡⠞⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⢤⠼⠁⠀⠀⠳⣤⡼⠀⠀⠀⠀⠀⠀
-                
-            ]]
-                }
-    }
-  }
+        ]],
+      },
+      highlights = {
+        header = "#00F00", -- header verde
+        icons = "#00F00",  -- ícones verdes
+      },
+    },
+  },
 }
+
