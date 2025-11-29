@@ -1,35 +1,50 @@
 return {
-  "neovim/nvim-lspconfig",
-  dependencies = {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-  },
-
-  config = function()
-    -- inicializa mason
-    require("mason").setup()
-
-    -- mason-lspconfig usando a NOVA API
-    require("mason-lspconfig").setup({
-      ensure_installed = { "pyright" },
-      handlers = {
-        function(server)
-          local config = vim.lsp.config[server] or {}
-          vim.lsp.start(config)
-        end,
-      },
-    })
-
-    -- configuração específica do pyright
-    vim.lsp.config.pyright = {
-      settings = {
-        python = {
-          analysis = {
-            typeCheckingMode = "basic",
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      -- LSPs usando a nova API
+      vim.lsp.config["lua_ls"] = {
+        settings = {
+          Lua = {
+            diagnostics = { globals = { "vim" } },
+            workspace = { checkThirdParty = false },
           },
         },
-      },
-    }
-  end,
+      }
+
+      vim.lsp.config["cssls"] = {
+        settings = {
+          css = { validate = true },
+          scss = { validate = true },
+          less = { validate = true },
+        },
+      }
+
+      vim.lsp.config["html"] = {}
+
+      vim.lsp.config["emmet_ls"] = {
+        filetypes = {
+          "html",
+          "css",
+          "javascriptreact",
+          "typescriptreact",
+          "jsx",
+          "tsx",
+          "xml",
+        },
+      }
+
+      vim.lsp.config["pyright"] = {}
+      vim.lsp.config["typescript-language-server"] = {}
+
+      -- Ativar LSPs
+      vim.lsp.enable("lua_ls")
+      vim.lsp.enable("cssls")
+      vim.lsp.enable("html")
+      vim.lsp.enable("emmet_ls")
+      vim.lsp.enable("pyright")
+      vim.lsp.enable("typescript-language-server")
+    end,
+  },
 }
 
