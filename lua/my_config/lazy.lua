@@ -7,7 +7,6 @@ local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 -- a função stardard path serve para procurar paths que segue a XDG do linux
 -- Quando voce passa o parametro "data", ele diz: 
 --"Dentro do nosso XDG procurando por data, eu quero procurar por lazy ou lazy.nvim"
---  
 
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
