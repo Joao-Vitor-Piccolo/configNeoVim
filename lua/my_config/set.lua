@@ -6,3 +6,5 @@ vim.opt.undofile = true
 vim.opt.tabstop = 4       -- tamanho do tab no arquivo
 vim.opt.shiftwidth = 4    -- tamanho da indentação ao dar >> ou autoindent
 vim.opt.expandtab = true  -- usa espaços em vez de tabs
+vim.lsp.enable('pyright')
+
